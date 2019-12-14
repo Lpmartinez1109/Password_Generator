@@ -18,7 +18,27 @@ function confirms(){
     optionBuilder();
 }
 
-
+function optionBuilder(){
+    if (isOp1 || isOp2 || isOp3 || isOp4) {
+        if (isOp1) {
+            possibleOptions = possibleOptions.concat(option1)
+        };
+        
+        if (isOp2) {
+            possibleOptions = possibleOptions.concat(option2)
+        };
+        
+        if (isOp3) {
+            possibleOptions = possibleOptions.concat(option3)
+        };
+        if (isOp4){
+            possibleOptions = possibleOptions.concat(option4)
+        }
+        getString();
+    } else {
+        alert("You must enable an option");
+        confirms();
+    };
 
 var generateBtn = document.querySelector("#generate");
 
