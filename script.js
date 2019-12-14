@@ -40,6 +40,20 @@ function optionBuilder(){
         confirms();
     };
 
+function randomNumber(){
+    return Math.floor(Math.random()* possibleOptions.lenght)
+};
+
+function getString() {
+    var text = "";
+    for (var i = o; i<8; i++){
+        text+=possibleOptions[randomNumber()]
+    }
+    alert(text);
+}
+
+confirms();
+
 var generateBtn = document.querySelector("#generate");
 
 
