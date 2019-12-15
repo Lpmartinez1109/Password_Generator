@@ -18,4 +18,4 @@ The final step was to get the copy password button to work. After I worked out h
 
 A few quick tests later, and everything on the page seemed to be working properly. All that was left was to work on the style.css to get the page looking proper as well as function properly as well.
 
-!(Password_Generator_HW.PNG)(./Images/Password_Generator_HW.PNG)
+![Password_Generator_HW.PNG](Images/Password_Generator_HW.PNG)
