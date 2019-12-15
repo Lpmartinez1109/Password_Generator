@@ -1,6 +1,6 @@
 // Assignment Code
-var generateEl = document.querySelector("#generate");
-var copyEl = document.querySelector("#copyPassword");
+// var generateEl = document.querySelector("#generate");
+// var copyEl = document.querySelector("#copyPassword");
 
 
 function generates(){
@@ -40,7 +40,9 @@ function generate(){
         if (isOp4){
             possibleOptions = possibleOptions.concat(option4)
         }
-        getString();
+        password();
+
+        
     } else {
         alert("You must enable an option");
         confirms();}
@@ -50,29 +52,36 @@ function randomNumber(){
     return Math.floor(Math.random()* possibleOptions.length)
 };
 
-function getString() {
+function password() {
     var text = "";
-    for (var i = 0; i<8; i++){
+    for (var i = 0; i<16; i++){
         text+=possibleOptions[randomNumber()]
     }
-    alert(text);
+    document.getElementById("password").value = text;
+    
 }
 
 confirms();
 }
+
+
 var generateBtn = document.querySelector("#generate");
 
 
+
+
+
+
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
-}
+//   copyBtn.removeAttribute("disabled");
+//   copyBtn.focus();
+// }
 
 function copyToClipboard() {
   // BONUS 
