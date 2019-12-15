@@ -83,9 +83,9 @@ var generateBtn = document.querySelector("#generate");
 //   copyBtn.focus();
 // }
 
-function copyToClipboard() {
+function copyPassword() {
   // BONUS 
-  document.getElementById("display").select();
+  document.getElementById("password").select();
   document.execCommand("Copy");
   alert("Password copied to clipboard!");
 }
