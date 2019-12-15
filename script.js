@@ -1,4 +1,9 @@
 // Assignment Code
+var generateEl = document.querySelector("#generate");
+var copyEl = document.querySelector("#copyPassword");
+
+
+function generates(){
 var option1 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var option2 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var option3 = ["1","2","3","4","5","6","7","8","9","0"];
@@ -10,15 +15,16 @@ var isOp3;
 var isOp4;
 var possibleOptions = [];
 
+
 function confirms(){
     isOp1 = confirm("Would you like to use Upper case letters?");
     isOp2 = confirm("Would you like to use Lower case letters?");
     isOp3 = confirm("Would you like to use numbers?");
     isOp4 = confirm("Would you like to Special characters?");
-    optionBuilder();
+    generate();
 }
 
-function optionBuilder(){
+function generate(){
     if (isOp1 || isOp2 || isOp3 || isOp4) {
         if (isOp1) {
             possibleOptions = possibleOptions.concat(option1)
@@ -37,23 +43,23 @@ function optionBuilder(){
         getString();
     } else {
         alert("You must enable an option");
-        confirms();
+        confirms();}
     };
 
 function randomNumber(){
-    return Math.floor(Math.random()* possibleOptions.lenght)
+    return Math.floor(Math.random()* possibleOptions.length)
 };
 
 function getString() {
     var text = "";
-    for (var i = o; i<8; i++){
+    for (var i = 0; i<8; i++){
         text+=possibleOptions[randomNumber()]
     }
     alert(text);
 }
 
 confirms();
-
+}
 var generateBtn = document.querySelector("#generate");
 
 
@@ -70,10 +76,13 @@ function writePassword() {
 
 function copyToClipboard() {
   // BONUS 
+  document.getElementById("display").select();
+  document.execCommand("Copy");
+  alert("Password copied to clipboard!");
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// BONUS EVENT LISTENER
-
+generateBtn.addEventListener("click", function(writePassword){
+    writePassword.preventDefault();
+    generates();
+})
